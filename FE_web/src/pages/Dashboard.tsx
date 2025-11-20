@@ -199,7 +199,7 @@ const Dashboard = () => {
                 {loading ? "Saving..." : "Save"}
               </Button>
             </div>
-            <div className="flex-1 overflow-hidden" data-color-mode="light">
+            <div className="flex-1 overflow-hidden w-md-editor-container" data-color-mode="light">
               <MDEditor
                 value={content}
                 onChange={(val) => setContent(val || "")}
