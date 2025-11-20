@@ -7,8 +7,8 @@ Una aplicación web completa para gestionar notas personales con autenticación 
 Este proyecto está dividido en tres partes principales:
 
 1. **Frontend Web** (`FE_web`): Interfaz web moderna construida con React y TypeScript
-2. **Backend de Autenticación** (`BE_auth`): Servicio de autenticación y gestión de usuarios. Escrita con Node.js
-3. **Backend de Notas** (`BE_notes`): Servicio para gestionar notas del usuario. Escrita con Node.js
+2. **Backend de Autenticación** (`BE_auth`): Servicio de autenticación y gestión de usuarios. Escrita en Node.js
+3. **Backend de Notas** (`BE_notes`): Servicio para gestionar notas del usuario. Escrita en Node.js
 
 ---
 
