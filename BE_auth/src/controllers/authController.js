@@ -52,7 +52,7 @@ class AuthController {
 
       const newUser = await user.save()
       console.log(user._id.toString())
-      return res.status(201).json({message:"Created successfully", id: user.id, name:user.name, email: user.email})
+      return res.status(201).json({message:"Created successfully", id: user.id, name:user.name, email: user.email, createdAt: user.createdAt})
     } catch (error) {
       console.error('Error in sign-up:', error);
       return res.status(500).json({ 
@@ -99,7 +99,7 @@ class AuthController {
       )
 
       // on success, return user (or generate JWT)
-      return res.status(201).json({ message: 'Logged in', id:user._id, jwt: token})
+      return res.status(201).json({ message: 'Logged in', id:user._id, jwt: token, date:Date.now})
     } catch (error) {
       console.error('Error in login:', error);
       return res.status(500).json({ error: 'Internal error' })
@@ -118,7 +118,7 @@ class AuthController {
 
       const payload = jwt.verify(token, process.env.JWT_SECRET);
       if (payload) {
-        return res.status(201).json({ message: 'Verified', jwt: token, payload });
+        return res.status(201).json({ message: 'Verified', jwt: token, payload, date:Date.now});
       } else {
         return res.status(401).json({ error: 'Invalid token' });
       }
