@@ -19,7 +19,7 @@ class AuthController {
         });
       }
 
-      //test email
+      //Test email
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)){
         return res.status(400).json({ 
@@ -27,7 +27,7 @@ class AuthController {
         });
       }
 
-      //test email availability
+      //Test email availability
       const emailInUse = await User.findOne({ email: email })
       if (emailInUse){
         return res.status(400).json({ 
@@ -35,12 +35,13 @@ class AuthController {
         });
       }
 
-      //test password
+      //Test password
       if (password.length < 8){
         return res.status(400).json({ 
           error: 'Password needs at least 8 characters' 
         });
       }
+    
       const hashedPassword = await bcrypt.hash(password, saltRounds)
 
       const user = new User({
