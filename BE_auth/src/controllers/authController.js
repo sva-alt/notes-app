@@ -52,7 +52,7 @@ class AuthController {
 
       const newUser = await user.save()
       console.log(user._id.toString())
-      return res.status(201).json(newUser)
+      return res.status(201).json({message:"Created successfully", id: user.id, name:user.name, email: user.email})
     } catch (error) {
       console.error('Error in sign-up:', error);
       return res.status(500).json({ 
