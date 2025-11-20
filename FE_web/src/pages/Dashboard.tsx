@@ -17,6 +17,7 @@ import {
 import { toast } from "sonner";
 import { Plus, LogOut, Trash2, Save, FileText } from "lucide-react";
 import MDEditor from "@uiw/react-md-editor";
+import rehypeSanitize from "rehype-sanitize";
 
 const Dashboard = () => {
   const { token, logout } = useAuth();
@@ -207,6 +208,9 @@ const Dashboard = () => {
                 preview="edit"
                 hideToolbar={false}
                 visibleDragbar={false}
+                previewOptions={{
+                  rehypePlugins: [[rehypeSanitize]],
+                }}
               />
             </div>
           </>
